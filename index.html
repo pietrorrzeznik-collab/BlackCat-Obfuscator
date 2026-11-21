@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#1b1b1b">
+
+    <title>BlackCat Luau Master Obfuscator</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="topbar">
+        <button class="menu-button" aria-label="Open menu">
+            ☰
+        </button>
+    </header>
+
+    <main class="container">
+
+        <section class="main-section">
+
+            <h1>BlackCat Luau Master Obfuscator</h1>
+
+            <p class="subtitle">
+                Built to protect Luau scripts
+            </p>
+
+            <div class="editor-container">
+
+                <textarea
+                    id="codeEditor"
+                    class="code-editor"
+                    placeholder="Paste your Luau script here..."
+                    spellcheck="false"
+                    autocapitalize="off"
+                    autocomplete="off"
+                ></textarea>
+
+                <button
+                    id="copyButton"
+                    class="copy-button"
+                    hidden
+                >
+                    Copy
+                </button>
+
+            </div>
+
+            <button
+                id="obfuscateButton"
+                class="obfuscate-button"
+            >
+                Obfuscate
+            </button>
+
+        </section>
+
+        <section class="information">
+
+            <h2>What is an obfuscator?</h2>
+
+            <p>
+                This tool allows you to obfuscate your code,
+                making it harder for others to read and
+                reverse-engineer. By transforming your source
+                code into a more complex and unreadable format,
+                you can help protect your intellectual property
+                while maintaining functionality.
+            </p>
+
+            <div class="comparison">
+
+                <div class="example before">
+                    <span class="example-label">BEFORE</span>
+                    <pre><code>local x = 10
+print(x)
+
+if x > 5 then
+    print("Hello!")
+end</code></pre>
+                </div>
+
+                <div class="example after">
+                    <span class="example-label">AFTER</span>
+                    <pre><code>01001001 01101100
+01101001 01101100
+...</code></pre>
+                </div>
+
+            </div>
+
+        </section>
+
+        <footer>
+            BlackCat Luau Master Obfuscator
+            <span>© 2026</span>
+        </footer>
+
+    </main>
+
+    <script src="blackcat.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>

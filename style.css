@@ -1,0 +1,208 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #1b1b1b;
+    color: #e5e5e5;
+    font-family: Arial, sans-serif;
+}
+
+.topbar {
+    width: 100%;
+    height: 64px;
+    background: #101010;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-button {
+    background: none;
+    border: none;
+    color: #eee;
+    font-size: 27px;
+    cursor: pointer;
+}
+
+.container {
+    width: 100%;
+    max-width: 1250px;
+    margin: auto;
+    padding: 20px;
+}
+
+.main-section h1 {
+    font-size: 36px;
+    font-weight: 500;
+    margin-bottom: 16px;
+}
+
+.subtitle {
+    font-size: 23px;
+    color: #cfcfcf;
+    margin-bottom: 24px;
+}
+
+.editor-container {
+    position: relative;
+}
+
+.code-editor {
+    display: block;
+    width: 100%;
+    height: 420px;
+    background: #292a24;
+    color: #e5e5e5;
+    border: none;
+    border-radius: 13px;
+    outline: none;
+    padding: 20px;
+    resize: vertical;
+    font-family: monospace;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.code-editor::placeholder {
+    color: #888;
+}
+
+.copy-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #101010;
+    color: #e5e5e5;
+    border: 1px solid #444;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.copy-button:hover {
+    background: #303030;
+}
+
+.obfuscate-button {
+    display: block;
+    width: 280px;
+    height: 76px;
+    margin: 20px auto 0;
+    background: #101010;
+    color: #e5e5e5;
+    border: none;
+    border-radius: 14px;
+    font-size: 23px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.obfuscate-button:hover {
+    background: #303030;
+}
+
+/* FIX: sem isso, o atributo "hidden" do JS nao conseguia esconder
+   o botao, porque o "display: block" acima tinha a mesma prioridade
+   e vinha depois no arquivo. */
+.obfuscate-button[hidden] {
+    display: none;
+}
+
+.information {
+    margin-top: 110px;
+}
+
+.information h2 {
+    font-size: 35px;
+    font-weight: 500;
+    margin-bottom: 16px;
+}
+
+.information p {
+    font-size: 20px;
+    line-height: 1.65;
+    color: #d0d0d0;
+}
+
+.comparison {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 28px;
+}
+
+.example {
+    min-width: 0;
+    min-height: 240px;
+    background: #292a24;
+    border-top: 1px solid #777;
+    padding: 18px;
+    overflow: hidden;
+}
+
+.example-label {
+    display: block;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 18px;
+}
+
+.example pre {
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #d6d6a0;
+}
+
+footer {
+    margin-top: 100px;
+    padding: 25px 0;
+    border-top: 1px solid #333;
+    text-align: center;
+    color: #888;
+    font-size: 14px;
+}
+
+footer span {
+    margin-left: 8px;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 18px;
+    }
+    .main-section h1 {
+        font-size: 27px;
+    }
+    .subtitle {
+        font-size: 18px;
+    }
+    .code-editor {
+        height: 400px;
+        font-size: 14px;
+    }
+    .obfuscate-button {
+        width: 75%;
+        height: 68px;
+        font-size: 20px;
+    }
+    .information {
+        margin-top: 110px;
+    }
+    .information h2 {
+        font-size: 27px;
+    }
+    .information p {
+        font-size: 16px;
+    }
+    .comparison {
+        grid-template-columns: 1fr;
+    }
+}
