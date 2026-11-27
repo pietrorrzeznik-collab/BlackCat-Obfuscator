@@ -18,6 +18,7 @@ document.addEventListener('keydown', function(event) {
 const editor = document.getElementById("codeEditor");
 const obfuscateButton = document.getElementById("obfuscateButton");
 const copyButton = document.getElementById("copyButton");
+const downloadButton = document.getElementById("downloadButton");
 
 let cModule = null;
 let obfuscateFunc = null;
@@ -38,6 +39,7 @@ function resetToObfuscateState() {
     obfuscateButton.hidden = false;
     copyButton.hidden = true;
     copyButton.textContent = "Copy";
+    downloadButton.hidden = true;
 }
 
 // Se o usuario editar o texto depois de ofuscar, volta a mostrar o
@@ -77,6 +79,7 @@ obfuscateButton.addEventListener("click", async () => {
         editor.value = obfuscatedCode;
         obfuscateButton.hidden = true;
         copyButton.hidden = false;
+        downloadButton.hidden = false;
 
     } catch (error) {
         alert("Error running the obfuscation engine.");
@@ -93,4 +96,18 @@ copyButton.addEventListener("click", async () => {
     } catch (error) {
         alert("Could not copy the code.");
     }
+});
+
+downloadButton.addEventListener("click", () => {
+    const blob = new Blob([editor.value], { type: "text/plain" });
+    const url = URL.createObjectURL(blob);
+
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = "obfuscated.lua";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
+    URL.revokeObjectURL(url);
 });
